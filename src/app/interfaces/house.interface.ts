@@ -8,5 +8,5 @@ export interface House{
     disponible: boolean;
     foto: string;
     lat: number;
-    lon: number;
+    long: number;
 }
