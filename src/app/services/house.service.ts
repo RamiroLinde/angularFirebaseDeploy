@@ -5,10 +5,14 @@ import { HOUSES } from '../interfaces/houses.db';
 @Injectable({
   providedIn: 'root'
 })
-export class CasaService {
+export class HouseService {
 
   arrHouses: House[];
   constructor() { 
     this.arrHouses = HOUSES;
+  }
+
+  getAll(){
+    return this.arrHouses;
   }
 }
