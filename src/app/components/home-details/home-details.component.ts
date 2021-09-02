@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { House } from 'src/app/interfaces/house.interface';
+import { HouseService } from 'src/app/services/house.service';
 
 @Component({
   selector: 'app-home-details',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeDetailsComponent implements OnInit {
 
-  constructor() { }
+
+  house: House | undefined;
+  constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params =>{
+      const id = params.idCasa;
+      this.house = this.houseService.getBtId(Number(id));
+      console.log(this.house, id);
+    })
   }
 
 }

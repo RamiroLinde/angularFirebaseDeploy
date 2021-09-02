@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "casarandr-3d037": {
+      "hosting": {
+        "deploy": [
+          "casarandr-3d037"
+        ]
+      }
+    }
+  }
+}
