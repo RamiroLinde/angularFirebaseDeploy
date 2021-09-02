@@ -22,9 +22,9 @@ export class HomeNewComponent implements OnInit {
     casa.disponibilidad = true;
 
     const message = this.housesService.create(casa);
-    if (message === 'success') {
-      this.router.navigate(['/home']);
-    }
+    // if (message === 'success') {
+    //   this.router.navigate(['/home']);
+    // }
   }
 
 }

@@ -11,15 +11,19 @@ import { HouseService } from 'src/app/services/house.service';
 export class HomeDetailsComponent implements OnInit {
 
 
-  house: House | undefined;
+  myHouse: House | undefined;
   constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params =>{
-      const id = params.idCasa;
-      this.house = this.houseService.getBtId(Number(id));
-      console.log(this.house, id);
+    this.activatedRoute.params.subscribe(async params =>{
+      const result = await this.houseService.getById(params.idCasa);
+      result.subscribe(data => {
+        this.myHouse = data;
+      })
     })
   }
+
+  
+  
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { House } from 'src/app/interfaces/house.interface';
 import { HouseService } from 'src/app/services/house.service';
 
@@ -9,9 +10,9 @@ import { HouseService } from 'src/app/services/house.service';
 })
 export class HomeComponent implements OnInit {
 
-  arrHouses: House[];
+  arrHouses: Observable<any[]> = new Observable;
   constructor(private houseService: HouseService) { 
-    this.arrHouses=[];
+  
   }
 
   ngOnInit(): void {
