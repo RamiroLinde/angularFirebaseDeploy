@@ -20,23 +20,34 @@ export class HouseService {
     return this.collection.valueChanges();
   }
 
-  getById(id: string){
+  getById(id: string) {
     return this.collection.doc(id).valueChanges();
   }
 
   create(pHouse: House): Promise<void> {
-    return new Promise((resolve, reject)=>{
-      try{
+    return new Promise((resolve, reject) => {
+      try {
         const id = this.firestore.createId();
         pHouse.id = id;
         const result = this.collection.doc(id).set(pHouse);
         resolve(result);
-      }catch(err){
+      } catch (err) {
         reject(err);
       }
     })
-  
   }
+
+  delete(pId: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      try {
+        this.collection.doc(pId).delete();
+        resolve({ success: 'ok' })
+      } catch (err) {
+        reject(err);
+      }
+    })
+  }
+
   // getAll(){
   //   return this.arrHouses;
   // }
