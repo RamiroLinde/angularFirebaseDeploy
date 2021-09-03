@@ -5,7 +5,7 @@ export interface House{
     ciudad: string;
     numHabitaciones: number;
     propietario: string;
-    disponible: boolean;
+    disponibilidad: boolean;
     foto: string;
     lat: number;
     long: number;

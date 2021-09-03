@@ -11,6 +11,7 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
 import { HomeDetailsComponent } from './components/home-details/home-details.component';
 import { HomeNewComponent } from './components/home-new/home-new.component';
 import { environment } from 'src/environments/environment';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB_UcPHDzpyG8Xk3M1UTRc43lebdxrUO_g'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

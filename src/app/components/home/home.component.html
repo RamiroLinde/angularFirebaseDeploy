@@ -4,4 +4,19 @@
             <app-home-card [house]="house"></app-home-card>
         </section>
     </div>
+    <div class="row">
+        <agm-map (mapRightClick)="onRightClick($event)" [latitude]="latitud" [longitude]="longitud" [zoom]="12" [mapTypeId]="'satellite'">
+            <agm-marker [latitude]="latitud" [longitude]="longitud" [iconUrl]="$any({url:'https://lh3.googleusercontent.com/proxy/5UNrrnpwNNxH_o0-bfPVO92MDRjEp4hHr0fh7wdiFyZG9pyRQ8ffsNXD7ataxAPHGRN-YWq-TM_7fYPwxuKuuJ5ne8cIJpUygsrTgGbEeSf_Yw0Wv1Egb97CUw_usYPYQlq36nJhyqUfDbGdC-44Ot9kD7zMmuU_K1jWVetyXpzW9eKRRD2mpDYH', scaledSize:{ width: 40, height: 40}})"></agm-marker>
+            <agm-marker [latitude]="house.lat" [longitude]="house.long" *ngFor="let house of arrHouses |async"> 
+
+                <agm-info-window>
+                    <h6>{{house?.titulo}}</h6>
+                    <img class="zoon" [src]="house?.foto">
+                    <hr>
+                    <button class="btn btn-danger btn-sm" [routerLink]="['/house', house?.id]">Ver detalle</button>
+                    <small>Propietario: {{house?.propietario}}</small>
+                    </agm-info-window>
+            </agm-marker>
+        </agm-map>
+    </div>
 </div>
