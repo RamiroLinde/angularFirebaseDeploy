@@ -3,16 +3,16 @@
   
       <div class="formGroup">
         <label for="titulo">Titulo</label>
-        <input type="text" class="form-control" ngModel name="titulo" id="titulo">
+        <input type="text" class="form-control" ngModel name="titulo" id="titulo" [(ngModel)]="houseUpdate.titulo">
       </div>
   
       <div class="formGroup">
         <label for="direccion">Dirección</label>
-        <input type="text" class="form-control" ngModel name="direccion">
+        <input type="text" class="form-control" ngModel name="direccion" [(ngModel)]="houseUpdate.direccion">
       </div>
   
       <div class="formGroup">
-        <select name="ciudad" ngModel id="ciudad" class="form-control mt-3">
+        <select name="ciudad" ngModel id="ciudad" class="form-control mt-3" [(ngModel)]="houseUpdate.ciudad">
           <option value="" selected>Selecciona una ciudad</option>
           <option value="madrid">Madrid</option>
           <option value="valencia">Valencia</option>
@@ -27,28 +27,28 @@
   
       <div class="formGroup">
         <label for="numerohabitaciones">Numero de habitaciones</label>
-        <input type="number" class="form-control" ngModel name="numerohabitaciones" id="numerohabitaciones">
+        <input type="number" class="form-control" ngModel name="numerohabitaciones" id="numerohabitaciones" [(ngModel)]="houseUpdate.numerohabitaciones">
       </div>
   
   
       <div class="formGroup">
         <label for="propietario">Propietario</label>
-        <input type="text" class="form-control" ngModel name="propietario" id="propietario">
+        <input type="text" class="form-control" ngModel name="propietario" id="propietario" [(ngModel)]="houseUpdate.propietario">
       </div>
   
       <div class="formGroup">
         <label for="foto">Fotografía</label>
-        <input type="text" class="form-control" ngModel name="foto" id="foto">
+        <input type="text" class="form-control" ngModel name="foto" id="foto" [(ngModel)]="houseUpdate.foto">
       </div>
   
       <div class="row mb-4">
         <div class="formGroup col-6">
           <label for="lat">Latitud</label>
-          <input type="number" class="form-control" ngModel name="lat" id="lat">
+          <input type="number" class="form-control" ngModel name="lat" id="lat" [(ngModel)]="houseUpdate.lat">
         </div>
         <div class="formGroup col-6">
           <label for="lat">Longitud</label>
-          <input type="number" class="form-control" ngModel name="long" id="long">
+          <input type="number" class="form-control" ngModel name="long" id="long" [(ngModel)]="houseUpdate.long"> 
         </div>
   
       </div>
